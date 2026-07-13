@@ -166,4 +166,7 @@ footer {
 .volver:visited {
     color: white;
 }
-
+section p {
+    margin-bottom: 20px;
+    max-width: 800px;
+}

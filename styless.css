@@ -1,3 +1,4 @@
+/* RESET Y BASE */
 * {
     margin: 0;
     padding: 0;
@@ -16,6 +17,7 @@ header {
     background: #0f172a;
     position: sticky;
     top: 0;
+    z-index: 100;
 }
 
 nav {
@@ -44,6 +46,11 @@ nav a:hover {
 /* SECCIONES */
 section {
     padding: 70px 10%;
+}
+
+section p {
+    margin-bottom: 20px;
+    max-width: 800px;
 }
 
 /* HERO */
@@ -104,7 +111,6 @@ button:hover {
     line-height: 1.5;
 }
 
-/* ENLACES DENTRO DE TARJETAS */
 .card a {
     display: inline-block;
     margin-top: 10px;
@@ -166,7 +172,8 @@ footer {
 .volver:visited {
     color: white;
 }
-section p {
-    margin-bottom: 20px;
-    max-width: 800px;
+
+/* NOTA ACLARATORIA */
+section p[style] {
+    max-width: 900px;
 }

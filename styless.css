@@ -11,6 +11,7 @@ body {
     line-height: 1.6;
 }
 
+/* HEADER */
 header {
     background: #0f172a;
     position: sticky;
@@ -40,10 +41,12 @@ nav a:hover {
     color: #2563eb;
 }
 
+/* SECCIONES */
 section {
     padding: 70px 10%;
 }
 
+/* HERO */
 .hero {
     text-align: center;
     padding: 120px 10%;
@@ -60,6 +63,7 @@ section {
     margin-bottom: 30px;
 }
 
+/* BOTONES */
 button {
     padding: 15px 25px;
     background: #2563eb;
@@ -74,6 +78,7 @@ button:hover {
     background: #1d4ed8;
 }
 
+/* TARJETAS */
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -92,7 +97,7 @@ button:hover {
     transform: translateY(-5px);
 }
 
-/* 🔗 Enlaces dentro de las tarjetas */
+/* ENLACES DENTRO DE TARJETAS */
 .card a {
     display: inline-block;
     margin-top: 10px;
@@ -107,7 +112,7 @@ button:hover {
     text-decoration: underline;
 }
 
-/* 💪 Habilidades */
+/* HABILIDADES */
 .skills {
     display: flex;
     flex-wrap: wrap;
@@ -122,15 +127,32 @@ button:hover {
     border-radius: 20px;
 }
 
-/* 📬 Contacto */
+/* CONTACTO */
 .contact-box {
     margin-top: 20px;
 }
 
-/* ⚓ Footer */
+/* FOOTER */
 footer {
     text-align: center;
     padding: 25px;
     background: #0f172a;
+}
+
+/* 🔙 BOTÓN VOLVER AL BLOG */
+.volver {
+    display: inline-block;
+    margin: 20px;
+    padding: 10px 15px;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.volver:hover {
+    background: #1d4ed8;
 }
 

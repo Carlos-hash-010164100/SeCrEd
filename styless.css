@@ -17,7 +17,7 @@ header {
     background: #0f172a;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 200;
 }
 
 nav {
@@ -31,6 +31,15 @@ nav h2 {
     color: #00eaff;
 }
 
+/* BOTÓN HACKER */
+#menu-btn {
+    font-size: 2rem;
+    cursor: pointer;
+    color: #00eaff;
+    display: none;
+}
+
+/* MENÚ */
 nav ul {
     display: flex;
     list-style: none;
@@ -47,7 +56,36 @@ nav a:hover {
     color: #1d4ed8;
 }
 
-/* SECCIONES GENERALES */
+/* MENÚ HACKER MÓVIL */
+#menu {
+    transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+    #menu-btn {
+        display: block;
+    }
+
+    nav ul {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        height: 100%;
+        width: 70%;
+        background: #0a0f1f;
+        flex-direction: column;
+        padding-top: 80px;
+        gap: 25px;
+        border-right: 2px solid #00eaff;
+        box-shadow: 0 0 20px #00eaff;
+    }
+
+    nav ul.active {
+        left: 0;
+    }
+}
+
+/* SECCIONES */
 section {
     padding: 70px 10%;
 }
@@ -55,24 +93,15 @@ section {
 section h2 {
     font-size: 2rem;
     margin-bottom: 20px;
-    text-shadow: 0 0 4px #00eaff; /* EFECTO REDUCIDO */
+    text-shadow: 0 0 4px #00eaff;
 }
 
-section p {
-    margin-bottom: 20px;
-    max-width: 800px;
-}
-
-/* HERO CON MATRIX CENTRADO */
+/* HERO */
 .hero {
     position: relative;
     text-align: center;
     padding: 120px 10%;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     min-height: 500px;
 }
 
@@ -85,12 +114,6 @@ section p {
     font-size: 3rem;
     margin-bottom: 20px;
     text-shadow: 0 0 10px #00eaff;
-}
-
-.hero p {
-    max-width: 800px;
-    margin: auto;
-    margin-bottom: 30px;
 }
 
 #matrix-bg {
@@ -112,7 +135,6 @@ button {
     border-radius: 8px;
     cursor: pointer;
     transition: 0.3s;
-    box-shadow: 0 0 10px rgba(37, 99, 235, 0.7);
 }
 
 button:hover {
@@ -124,73 +146,36 @@ button:hover {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 20px;
-    margin-top: 30px;
 }
 
 .card {
-    background: rgba(15, 23, 42, 0.9);
+    background: rgba(15, 23, 42, 0.85);
     padding: 25px;
     border-radius: 10px;
-    transition: 0.3s;
     border: 1px solid #1e3a8a;
-    box-shadow: 0 0 15px rgba(37, 99, 235, 0.4);
-    backdrop-filter: blur(4px);
+    box-shadow: 0 0 10px rgba(37, 99, 235, 0.2);
+    transition: 0.3s;
 }
 
 .card:hover {
     transform: translateY(-5px);
 }
 
-.card ul {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding-left: 20px;
-    line-height: 1.5;
-}
-
-.card a {
-    display: inline-block;
-    margin-top: 10px;
-    color: #00eaff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.card a:hover {
-    color: #1d4ed8;
-    text-decoration: underline;
+/* PROMOS */
+.promo {
+    background: #1e3a8a;
+    color: white;
 }
 
 /* CONTACTO */
-.contact-box {
-    margin-top: 20px;
-}
-
 .contact-box p {
     margin-bottom: 8px;
 }
 
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 25px;
-    background: #0f172a;
-    margin-top: 40px;
-}
-
-/* RESPONSIVE REAL */
+/* RESPONSIVE */
 @media (max-width: 768px) {
-
-    nav {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-    }
-
-    nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
+    section {
+        padding: 40px 5%;
     }
 
     .hero {
@@ -202,29 +187,8 @@ footer {
         font-size: 2rem;
     }
 
-    .hero p {
-        font-size: 0.95rem;
-    }
-
-    button {
-        width: 90%;
-        max-width: 300px;
-    }
-
-    section {
-        padding: 40px 5%;
-    }
-
     .cards {
         grid-template-columns: 1fr;
-    }
-
-    .card {
-        padding: 20px;
-    }
-
-    section h2 {
-        font-size: 1.6rem;
     }
 }
 

@@ -10,16 +10,17 @@ function resizeMatrixCanvas() {
 
 resizeMatrixCanvas();
 
+// Letras más visibles y más grandes
 const letters = '01#@$%&*<>[]{}';
-const fontSize = 16;
+const fontSize = 22; // AUMENTADO
 let columns = canvas.width / fontSize;
 let drops = Array(Math.floor(columns)).fill(1);
 
 function drawMatrix() {
-    ctx.fillStyle = 'rgba(10, 15, 31, 0.1)';
+    ctx.fillStyle = 'rgba(10, 15, 31, 0.15)';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    ctx.fillStyle = '#00eaff';
+    ctx.fillStyle = '#c8f6ff'; // BLANCO AZULADO MÁS VISIBLE
     ctx.font = fontSize + 'px monospace';
 
     drops.forEach((y, i) => {

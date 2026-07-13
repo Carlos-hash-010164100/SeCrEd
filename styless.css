@@ -55,7 +55,7 @@ section {
 section h2 {
     font-size: 2rem;
     margin-bottom: 20px;
-    text-shadow: 0 0 8px #00eaff;
+    text-shadow: 0 0 4px #00eaff; /* EFECTO REDUCIDO */
 }
 
 section p {
@@ -84,7 +84,7 @@ section p {
 .hero h1 {
     font-size: 3rem;
     margin-bottom: 20px;
-    text-shadow: 0 0 12px #00eaff;
+    text-shadow: 0 0 10px #00eaff;
 }
 
 .hero p {
@@ -179,23 +179,52 @@ footer {
     margin-top: 40px;
 }
 
-/* RESPONSIVE */
+/* RESPONSIVE REAL */
 @media (max-width: 768px) {
+
     nav {
         flex-direction: column;
         gap: 10px;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .hero {
-        padding: 80px 5%;
-        min-height: 400px;
-    }
-
-    section {
-        padding: 50px 5%;
+        padding: 60px 5%;
+        min-height: 350px;
     }
 
     .hero h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+    }
+
+    button {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    section {
+        padding: 40px 5%;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    section h2 {
+        font-size: 1.6rem;
     }
 }
+

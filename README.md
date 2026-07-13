@@ -1,2 +1,8 @@
 # SeCrEd
-Seguridad de Redes para Hogares y Pequeñas Empresas
+
+# 🛡️ Seguridad de Redes para Hogares y PYMEs
+
+Redes seguras. Soluciones prácticas. Riesgos reducidos.
+
+🌐 https://TUUSUARIO.github.io
+`

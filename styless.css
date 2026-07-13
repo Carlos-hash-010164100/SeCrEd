@@ -97,6 +97,13 @@ button:hover {
     transform: translateY(-5px);
 }
 
+.card ul {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    line-height: 1.5;
+}
+
 /* ENLACES DENTRO DE TARJETAS */
 .card a {
     display: inline-block;
@@ -139,7 +146,7 @@ footer {
     background: #0f172a;
 }
 
-/* 🔙 BOTÓN VOLVER AL BLOG */
+/* BOTÓN VOLVER */
 .volver {
     display: inline-block;
     margin: 20px;
@@ -154,5 +161,9 @@ footer {
 
 .volver:hover {
     background: #1d4ed8;
+}
+
+.volver:visited {
+    color: white;
 }
 

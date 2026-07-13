@@ -1,181 +1,154 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tu Nombre | Seguridad de Redes para Hogares y Pymes</title>
+    <title>RedSegura | Seguridad para Hogares y PYMEs</title>
+
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-<header>
-    <nav>
-        <h2>RedSegura</h2>
+    <header>
+        <nav>
+            <h2>🛡️ RedSegura</h2>
 
-        <ul>
-            <li>#inicioInicio</a></li>
-            <li>#sobre-miSobre mí</a></li>
-            <li>#serviciosServicios</a></li>
-            <li>#habilidadesHabilidades</a></li>
-            <li>#blogBlog</a></li>
-            <li>#contactoContacto</a></li>
+            <ul>
+                <li>#inicioInicio</a></li>
+                <li>#sobre-miSobre mí</a></li>
+                <li>#serviciosServicios</a></li>
+                <li>#habilidadesHabilidades</a></li>
+                <li>#blogBlog</a></li>
+                <li>#contactoContacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+        <h1>Seguridad de Redes para Hogares y PYMEs</h1>
+
+        <p>
+            Configuración segura de redes, Wi‑Fi, respaldos y buenas prácticas
+            para proteger hogares y pequeños negocios.
+        </p>
+
+        <button onclick="scrollToSection('contacto')">
+            Solicitar Evaluación
+        </button>
+    </section>
+
+    <section id="sobre-mi">
+        <h2>Sobre mí</h2>
+
+        <p>
+            Apasionado por la ciberseguridad y las redes. Mi enfoque está basado
+            en soluciones prácticas para hogares y pequeñas empresas que desean
+            mejorar su seguridad sin complicaciones.
+        </p>
+
+        <p>
+            Inspirado en los principios de
+            <strong>Cybersecurity for Small Networks</strong>.
+        </p>
+    </section>
+
+    <section id="servicios">
+        <h2>Servicios</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>🏠 Hogar Seguro</h3>
+                <p>Revisión de router, Wi‑Fi, cámaras IP y dispositivos conectados.</p>
+            </div>
+
+            <div class="card">
+                <h3>🏢 PyME Segura</h3>
+                <p>Auditorías básicas de red y recomendaciones de seguridad.</p>
+            </div>
+
+            <div class="card">
+                <h3>🌐 Redes Wi‑Fi</h3>
+                <p>Configuración segura y red para invitados.</p>
+            </div>
+
+            <div class="card">
+                <h3>🔒 Contraseñas</h3>
+                <p>Buenas prácticas y gestores de contraseñas.</p>
+            </div>
+
+            <div class="card">
+                <h3>💾 Respaldos</h3>
+                <p>Estrategias de respaldo y recuperación.</p>
+            </div>
+
+            <div class="card">
+                <h3>🎓 Capacitación</h3>
+                <p>Concientización para usuarios y empleados.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="habilidades">
+        <h2>Habilidades</h2>
+
+        <ul class="skills">
+            <li>TCP/IP</li>
+            <li>Linux</li>
+            <li>Wi‑Fi</li>
+            <li>VPN</li>
+            <li>VLANs</li>
+            <li>Firewalls</li>
+            <li>Hardening</li>
+            <li>Respaldos</li>
+            <li>Gestión de Riesgos</li>
         </ul>
-    </nav>
-</header>
+    </section>
 
-<section id="inicio" class="hero">
-    <h1>Seguridad de Redes para Hogares y Pequeñas Empresas</h1>
+    <section id="blog">
+        <h2>Artículos</h2>
 
-    <p>
-        Ayudo a proteger redes domésticas y pymes mediante configuraciones
-        seguras, segmentación de redes, buenas prácticas y auditorías básicas.
-    </p>
+        <div class="cards">
 
-    <button onclick="scrollToSection('contacto')">
-        Solicitar Evaluación
-    </button>
-</section>
+            <div class="card">
+                <h3>10 errores comunes en redes domésticas</h3>
+                <p>Problemas frecuentes y cómo evitarlos.</p>
+            </div>
 
-<section id="sobre-mi">
-    <h2>Sobre mí</h2>
+            <div class="card">
+                <h3>¿Por qué segmentar una red?</h3>
+                <p>Ventajas de usar VLANs y redes separadas.</p>
+            </div>
 
-    <p>
-        Soy entusiasta de la ciberseguridad enfocado en la protección de
-        redes domésticas y pequeñas empresas. Mi filosofía está basada
-        en medidas prácticas, accesibles y efectivas para reducir riesgos
-        sin necesidad de grandes inversiones.
-    </p>
+            <div class="card">
+                <h3>Cómo asegurar tu router</h3>
+                <p>Medidas simples para fortalecer la seguridad.</p>
+            </div>
 
-    <p>
-        Inspirado por los principios expuestos en
-        <strong>Cybersecurity for Small Networks</strong>,
-        creo que una red bien configurada reduce significativamente las
-        posibilidades de sufrir incidentes de seguridad.
-    </p>
-</section>
-
-<section id="servicios">
-    <h2>Servicios</h2>
-
-    <div class="cards">
-
-        <div class="card">
-            <h3>🏠 Hogar Seguro</h3>
-            <p>
-                Revisión de router, Wi-Fi, cámaras IP,
-                contraseñas y dispositivos conectados.
-            </p>
         </div>
+    </section>
 
-        <div class="card">
-            <h3>🏢 PyME Segura</h3>
-            <p>
-                Auditoría básica de red,
-                segmentación y recomendaciones de seguridad.
-            </p>
+    <section id="contacto">
+        <h2>Contacto</h2>
+
+        <p>¿Necesitas ayuda para proteger tu red?</p>
+
+        <div class="contact-box">
+            <p>📧 tucorreo@correo.com</p>
+            <p>🐙 github.com/tuusuario</p>
+            <p>💼 linkedin.com/in/tuperfil</p>
         </div>
+    </section>
 
-        <div class="card">
-            <h3>🌐 Redes Wi-Fi</h3>
-            <p>
-                Configuración segura, acceso para invitados y mejora
-                de buenas prácticas.
-            </p>
-        </div>
+    <footer>
+        <p>© 2026 RedSegura</p>
+    </footer>
 
-        <div class="card">
-            <h3>🔒 Gestión de Contraseñas</h3>
-            <p>
-                Implementación de políticas y gestores
-                de contraseñas.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>💾 Respaldos</h3>
-            <p>
-                Estrategias básicas de respaldo y recuperación
-                ante incidentes.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>🎓 Capacitación</h3>
-            <p>
-                Concientización para usuarios y empleados.
-            </p>
-        </div>
-
-    </div>
-</section>
-
-<section id="habilidades">
-    <h2>Habilidades</h2>
-
-    <ul class="skills">
-        <li>Administración de Redes</li>
-        <li>TCP/IP</li>
-        <li>Wi-Fi Seguro</li>
-        <li>VLANs</li>
-        <li>VPN</li>
-        <li>Firewalls</li>
-        <li>Linux</li>
-        <li>Hardening</li>
-        <li>Análisis de Riesgos</li>
-        <li>Respaldos</li>
-    </ul>
-</section>
-
-<section id="blog">
-    <h2>Artículos Recientes</h2>
-
-    <div class="cards">
-
-        <div class="card">
-            <h3>10 errores comunes en redes domésticas</h3>
-            <p>
-                Problemas frecuentes encontrados en hogares y cómo mitigarlos.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>¿Por qué segmentar una red?</h3>
-            <p>
-                Beneficios de separar dispositivos IoT, invitados y equipos de trabajo.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>Guía básica para asegurar un router</h3>
-            <p>
-                Medidas simples con gran impacto en la seguridad.
-            </p>
-        </div>
-
-    </div>
-</section>
-
-<section id="contacto">
-    <h2>Contacto</h2>
-
-    <p>
-        ¿Necesitas ayuda para proteger tu red?
-    </p>
-
-    <div class="contact-box">
-        <p>📧 correo@ejemplo.com</p>
-        <p>💼 LinkedIn</p>
-        <p>🐙 GitHub</p>
-    </div>
-</section>
-
-<footer>
-    <p>
-        © 2026 RedSegura - Seguridad práctica para hogares y pymes
-    </p>
-</footer>
-
-script.jsscript>
+    script.jsscript>
 
 </body>
+
 </html>

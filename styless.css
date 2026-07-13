@@ -177,3 +177,14 @@ footer {
 section p[style] {
     max-width: 900px;
 }
+.sobre-mi-lista {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding-left: 25px;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.sobre-mi-lista li {
+    margin-bottom: 8px;
+}

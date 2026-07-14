@@ -1,297 +1,80 @@
-/* RESET */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Courier New', monospace;
+/* ============================
+   MATRIX BACKGROUND
+============================ */
+
+const canvas = document.getElementById('matrix-bg');
+const ctx = canvas.getContext('2d');
+
+function resizeMatrixCanvas() {
+    const hero = document.querySelector('.hero');
+    canvas.width = hero.offsetWidth;
+    canvas.height = hero.offsetHeight;
+}
+resizeMatrixCanvas();
+
+const letters = '01#@$%&*<>[]{}';
+const fontSize = 22;
+let columns = canvas.width / fontSize;
+let drops = Array(Math.floor(columns)).fill(1);
+
+function drawMatrix() {
+    ctx.fillStyle = 'rgba(10, 15, 31, 0.15)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = '#c8f6ff';
+    ctx.font = fontSize + 'px monospace';
+
+    drops.forEach((y, i) => {
+        const text = letters[Math.floor(Math.random() * letters.length)];
+        const x = i * fontSize;
+        ctx.fillText(text, x, y * fontSize);
+
+        if (y * fontSize > canvas.height && Math.random() > 0.975) {
+            drops[i] = 0;
+        }
+        drops[i]++;
+    });
 }
 
-body {
-    background: #0a0f1f;
-    color: #e0e0e0;
-    line-height: 1.6;
-}
+setInterval(drawMatrix, 50);
 
-/* HEADER */
-header {
-    background: #0f172a;
-    position: sticky;
-    top: 0;
-    z-index: 200;
-}
+window.addEventListener('resize', () => {
+    resizeMatrixCanvas();
+    columns = canvas.width / fontSize;
+    drops = Array(Math.floor(columns)).fill(1);
+});
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-}
 
-nav h2 {
-    color: #00eaff;
-}
+/* ============================
+   MENÚ HACKER
+============================ */
 
-#menu-btn {
-    font-size: 2rem;
-    cursor: pointer;
-    color: #00eaff;
-    display: none;
-}
+const menuBtn = document.getElementById('menu-btn');
+const menu = document.getElementById('menu');
 
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-}
+menuBtn.addEventListener('click', () => {
+    menu.classList.toggle('active');
+});
 
-nav a {
-    text-decoration: none;
-    color: #00eaff;
-    transition: 0.3s;
-}
+document.querySelectorAll('#menu a').forEach(link => {
+    link.addEventListener('click', () => {
+        menu.classList.remove('active');
+    });
+});
 
-nav a:hover {
-    color: #1d4ed8;
-}
 
-/* MENÚ MÓVIL HACKER */
-@media (max-width: 768px) {
-    #menu-btn {
-        display: block;
-    }
+/* ============================
+   TARJETA FLOTANTE HACKER
+============================ */
 
-    nav ul {
-        position: fixed;
-        left: -100%;
-        top: 0;
-        height: 100%;
-        width: 70%;
-        background: #050814;
-        flex-direction: column;
-        padding-top: 80px;
-        gap: 25px;
-        border-right: 2px solid #00eaff;
-        box-shadow: 0 0 20px #00eaff;
-        transition: 0.3s;
-    }
+const evalBtn = document.getElementById('eval-btn');
+const evalMessage = document.getElementById('eval-message');
+const closeEval = document.getElementById('close-eval');
 
-    nav ul.active {
-        left: 0;
-    }
-}
+evalBtn.addEventListener('click', () => {
+    evalMessage.style.display = 'block';
+});
 
-/* SECCIONES */
-section {
-    padding: 70px 10%;
-}
-
-section h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    text-shadow: 0 0 4px #00eaff;
-}
-
-/* HERO */
-.hero {
-    position: relative;
-    text-align: center;
-    padding: 120px 10%;
-    overflow: hidden;
-    min-height: 500px;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 1;
-}
-
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    text-shadow: 0 0 10px #00eaff;
-}
-
-.hero p {
-    max-width: 800px;
-    margin: 0 auto 30px auto;
-}
-
-#matrix-bg {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-}
-
-/* BOTONES */
-button {
-    padding: 15px 25px;
-    background: #2563eb;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-button:hover {
-    background: #1d4ed8;
-}
-
-/* TARJETA HACKER FLOTANTE */
-.eval-message {
-    position: fixed;
-    top: 18%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(5, 8, 20, 0.95);
-    border: 2px solid #00eaff;
-    box-shadow: 0 0 20px #00eaff;
-    padding: 25px;
-    width: 90%;
-    max-width: 400px;
-    text-align: center;
-    border-radius: 10px;
-    z-index: 9999;
-    display: none;
-    animation: popup 0.3s ease-out;
-}
-
-@keyframes popup {
-    from { transform: translateX(-50%) scale(0.8); opacity: 0; }
-    to { transform: translateX(-50%) scale(1); opacity: 1; }
-}
-
-#close-eval {
-    margin-top: 15px;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: #00eaff;
-    transition: 0.3s;
-}
-
-#close-eval:hover {
-    color: #1d4ed8;
-}
-
-/* TARJETAS */
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 25px;
-}
-
-.card {
-    background: rgba(15, 23, 42, 0.85);
-    padding: 25px;
-    border-radius: 10px;
-    border: 1px solid #1e3a8a;
-    box-shadow: 0 0 10px rgba(37, 99, 235, 0.2);
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-.card ul {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding-left: 20px;
-    line-height: 1.5;
-}
-
-.card a {
-    display: inline-block;
-    margin-top: 10px;
-    color: #00eaff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.card a:hover {
-    color: #1d4ed8;
-    text-decoration: underline;
-}
-
-/* PROMOS */
-.promo {
-    background: #1e3a8a;
-    color: white;
-    padding-bottom: 40px; /* MÁS ESPACIO */
-}
-
-/* NOTAS */
-.nota {
-    margin-top: 20px;
-    font-size: 0.9rem;
-    opacity: 0.8;
-    max-width: 800px;
-}
-
-/* AUTOR */
-.autor-links {
-    margin-top: 20px;
-}
-
-.yt-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    color: #ff4b4b;
-    font-weight: bold;
-    padding: 10px 15px;
-    border-radius: 8px;
-    border: 1px solid #ff4b4b;
-    box-shadow: 0 0 10px rgba(255, 75, 75, 0.4);
-}
-
-.yt-link:hover {
-    background: rgba(255, 75, 75, 0.1);
-}
-
-.yt-logo {
-    width: 45px;
-    height: 45px;
-    border-radius: 6px;
-    box-shadow: 0 0 10px rgba(255, 75, 75, 0.5);
-}
-
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 25px;
-    background: #0f172a;
-    margin-top: 40px;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    section {
-        padding: 40px 5%;
-    }
-
-    .hero {
-        padding: 60px 5%;
-        min-height: 350px;
-    }
-
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    .cards {
-        grid-template-columns: 1fr;
-    }
-
-    button {
-        width: 90%;
-        max-width: 300px;
-    }
-}
-
+closeEval.addEventListener('click', () => {
+    evalMessage.style.display = 'none';
+});

@@ -40,13 +40,6 @@ window.addEventListener('resize', () => {
     drops = Array(Math.floor(columns)).fill(1);
 });
 
-// SCROLL
-function scrollToSection(id) {
-    const el = document.getElementById(id);
-    if (!el) return;
-    el.scrollIntoView({ behavior: 'smooth' });
-}
-
 // MENÚ HACKER
 const menuBtn = document.getElementById('menu-btn');
 const menu = document.getElementById('menu');
@@ -55,10 +48,20 @@ menuBtn.addEventListener('click', () => {
     menu.classList.toggle('active');
 });
 
-// Cerrar menú al tocar un enlace
 document.querySelectorAll('#menu a').forEach(link => {
     link.addEventListener('click', () => {
         menu.classList.remove('active');
     });
 });
 
+// BOTÓN SOLICITAR EVALUACIÓN
+const evalBtn = document.getElementById('eval-btn');
+const evalMessage = document.getElementById('eval-message');
+
+evalBtn.addEventListener('click', () => {
+    if (evalMessage.style.display === 'block') {
+        evalMessage.style.display = 'none';
+    } else {
+        evalMessage.style.display = 'block';
+    }
+});

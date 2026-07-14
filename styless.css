@@ -13,6 +13,7 @@ body {
     background: #0a0f1f;
     color: #e0e0e0;
     line-height: 1.6;
+    overflow-x: hidden; /* evita recortes laterales */
 }
 
 /* ============================================================
@@ -104,13 +105,13 @@ section h2 {
 }
 
 /* ============================================================
-   HERO (CORREGIDO PARA QUE SE VEA ANCHO)
+   HERO (FIX DEFINITIVO PARA ANCHO COMPLETO)
 ============================================================ */
 
 .hero {
     position: relative;
     text-align: center;
-    padding: 120px 0; /* ← CORREGIDO */
+    padding: 0; /* sin márgenes laterales */
     overflow: hidden;
     min-height: 500px;
 }
@@ -118,6 +119,7 @@ section h2 {
 .hero-content {
     position: relative;
     z-index: 1;
+    padding: 120px 10%; /* solo el contenido tiene margen */
 }
 
 .hero h1 {
@@ -134,22 +136,10 @@ section h2 {
 #matrix-bg {
     position: absolute;
     top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
+    left: 0;
+    width: 100vw; /* ocupa todo el ancho del viewport */
     height: 100%;
     z-index: 0;
-}
-
-@media (max-width: 768px) {
-    .hero {
-        padding: 60px 0; /* ← CORREGIDO */
-        min-height: 350px;
-    }
-
-    .hero h1 {
-        font-size: 2rem;
-    }
 }
 
 /* ============================================================
@@ -316,7 +306,6 @@ footer {
     background: #0f172a;
     margin-top: 40px;
 }
-
 /* ============================================================
    SOBRE MÍ (solo esta página)
 ============================================================ */
@@ -453,6 +442,7 @@ footer {
         max-width: 300px;
     }
 
+    /* SOBRE MÍ */
     .sobre-mi-page {
         padding: 25px 5%;
         line-height: 1.6;
@@ -466,6 +456,7 @@ footer {
         font-size: 1.4rem;
     }
 
+    /* ARTÍCULOS */
     .articulo-page {
         padding: 25px 5%;
         line-height: 1.6;

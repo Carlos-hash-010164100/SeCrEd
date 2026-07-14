@@ -1,4 +1,7 @@
-// MATRIX
+/* ============================
+   MATRIX BACKGROUND
+============================ */
+
 const canvas = document.getElementById('matrix-bg');
 const ctx = canvas.getContext('2d');
 
@@ -32,6 +35,7 @@ function drawMatrix() {
         drops[i]++;
     });
 }
+
 setInterval(drawMatrix, 50);
 
 window.addEventListener('resize', () => {
@@ -40,7 +44,11 @@ window.addEventListener('resize', () => {
     drops = Array(Math.floor(columns)).fill(1);
 });
 
-// MENÚ HACKER
+
+/* ============================
+   MENÚ HACKER
+============================ */
+
 const menuBtn = document.getElementById('menu-btn');
 const menu = document.getElementById('menu');
 
@@ -54,14 +62,19 @@ document.querySelectorAll('#menu a').forEach(link => {
     });
 });
 
-// BOTÓN SOLICITAR EVALUACIÓN
+
+/* ============================
+   TARJETA FLOTANTE HACKER
+============================ */
+
 const evalBtn = document.getElementById('eval-btn');
 const evalMessage = document.getElementById('eval-message');
+const closeEval = document.getElementById('close-eval');
 
 evalBtn.addEventListener('click', () => {
-    if (evalMessage.style.display === 'block') {
-        evalMessage.style.display = 'none';
-    } else {
-        evalMessage.style.display = 'block';
-    }
+    evalMessage.style.display = 'block';
+});
+
+closeEval.addEventListener('click', () => {
+    evalMessage.style.display = 'none';
 });

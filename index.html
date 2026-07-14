@@ -15,7 +15,6 @@
     <nav>
         <h2>🛡️ RedSegura</h2>
 
-        <!-- Botón Hacker -->
         <div id="menu-btn">≡</div>
 
         <ul id="menu">
@@ -23,14 +22,11 @@
             <li><a href="sobre-mi.html">Sobre mí</a></li>
             <li><a href="#hogar">Hogar</a></li>
             <li><a href="#pyme">PyME</a></li>
-            <li><a href="#precios">Promociones</a></li>
-            <li><a href="#blog">Blog</a></li>
-            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#autor">Contenido del autor</a></li>
         </ul>
     </nav>
 </header>
 
-<!-- HERO CON MATRIX -->
 <section id="inicio" class="hero">
     <canvas id="matrix-bg"></canvas>
 
@@ -42,13 +38,17 @@
             para proteger hogares y pequeños negocios.
         </p>
 
-        <button onclick="scrollToSection('contacto')">
+        <button id="eval-btn">
             Solicitar Evaluación
         </button>
+
+        <div id="eval-message" class="eval-message">
+            <p>📎 Comunícate con la persona que te dio la tarjeta.</p>
+            <p>Escanea el código QR de tu tarjeta para continuar.</p>
+        </div>
     </div>
 </section>
 
-<!-- SERVICIOS HOGAR -->
 <section id="hogar">
     <h2>Servicios para Hogares</h2>
 
@@ -59,9 +59,11 @@
             <p>Protección básica para tu hogar.</p>
             <ul>
                 <li>Cambio de contraseña admin</li>
-                <li>Actualización de firmware</li>
+                <li>Actualización de firmware (si el fabricante ofrece soporte)</li>
                 <li>WPA2/WPA3 + desactivar WPS</li>
                 <li>Revisión de dispositivos conectados</li>
+                <li>Ocultar SSID (si el cliente lo solicita)</li>
+                <li>Activar Red Privada / Red Doméstica Segura</li>
             </ul>
             <p><strong>$350 MXN</strong></p>
         </div>
@@ -70,9 +72,9 @@
             <h3>🌐 Red para Invitados</h3>
             <p>Aislamiento total para visitas.</p>
             <ul>
-                <li>Red separada</li>
-                <li>Bloqueo de acceso a LAN</li>
-                <li>Optimización de ancho de banda</li>
+                <li>Red separada para invitados</li>
+                <li>Bloqueo de acceso a la red principal</li>
+                <li>Optimización de ancho de banda (si el router lo permite)</li>
             </ul>
             <p><strong>$250 MXN</strong></p>
         </div>
@@ -81,13 +83,15 @@
             <h3>🧱 VLANs Domésticas</h3>
             <p>Separación de dispositivos y control parental.</p>
             <ul>
-                <li>Segmentación IoT / cámaras / invitados</li>
-                <li>Reglas de comunicación</li>
+                <li>Segmentación IoT / cámaras / invitados / trabajo</li>
+                <li>Reglas de comunicación entre segmentos</li>
                 <li>Pruebas de aislamiento</li>
-                <li>Bloqueo de contenido adulto / apuestas / violencia</li>
+                <li>Bloqueo de contenido no deseado (adultos)</li>
                 <li>DNS seguro familiar</li>
+                <li>Ocultar SSID en redes sensibles (IoT / cámaras)</li>
+                <li>Red Privada en segmentos críticos</li>
             </ul>
-            <p><strong>$650 MXN</strong></p>
+            <p><strong>$450 – $750 MXN</strong></p>
         </div>
 
         <div class="card">
@@ -103,9 +107,30 @@
         </div>
 
     </div>
+
+    <div class="cards promos-hogar">
+        <div class="card promo">
+            <h3>🎁 Paquete Hogar Seguro</h3>
+            <ul>
+                <li>Asegurar tu router</li>
+                <li>Red para invitados</li>
+                <li>Diagnóstico doméstico</li>
+            </ul>
+            <p><strong>$1,200 MXN</strong></p>
+        </div>
+    </div>
+
+    <p class="nota">
+        Los filtros web se implementan mediante DNS de seguridad gratuitos (Cloudflare, Quad9, OpenDNS).
+        No se incluyen licencias de firewall empresarial.
+    </p>
+
+    <p class="nota">
+        Cada configuración depende de las capacidades del router y del acceso proporcionado por el ISP.
+        Si alguna función no está disponible, se aplican alternativas razonables.
+    </p>
 </section>
 
-<!-- SERVICIOS PYME -->
 <section id="pyme">
     <h2>Servicios para PYMEs</h2>
 
@@ -117,7 +142,7 @@
             <ul>
                 <li>Revisión de router</li>
                 <li>Wi‑Fi y dispositivos</li>
-                <li>Buenas prácticas</li>
+                <li>Buenas prácticas de seguridad</li>
                 <li>Reporte PDF</li>
             </ul>
             <p><strong>$1,000 MXN</strong></p>
@@ -128,7 +153,7 @@
             <p>Separación de áreas críticas.</p>
             <ul>
                 <li>IoT / cámaras / trabajo / invitados</li>
-                <li>Reglas de comunicación</li>
+                <li>Reglas de comunicación entre segmentos</li>
                 <li>Pruebas de aislamiento</li>
             </ul>
             <p><strong>$650 MXN</strong></p>
@@ -136,36 +161,24 @@
 
         <div class="card">
             <h3>🔐 PyME Segura</h3>
-            <p>Medidas de seguridad razonables.</p>
+            <p>Medidas de seguridad razonables para pequeñas empresas.</p>
             <ul>
-                <li>Políticas básicas</li>
-                <li>Respaldos</li>
-                <li>Capacitación breve</li>
-                <li>Filtro web empresarial (malware, phishing, adultos)</li>
+                <li>Políticas básicas de seguridad</li>
+                <li>Respaldos esenciales</li>
+                <li>Capacitación breve al personal</li>
+                <li>Filtro web empresarial básico (malware, phishing, contenido inapropiado)</li>
                 <li>DNS seguro empresarial</li>
+                <li>Políticas de navegación por área o empleado</li>
+                <li>Bloqueo de redes sociales si el dueño lo solicita</li>
+                <li>Ocultar SSID en redes internas</li>
+                <li>Red Privada para áreas administrativas</li>
             </ul>
-            <p><strong>$1,200 MXN – $2,000 MXN</strong></p>
+            <p><strong>$1,500 – $2,500 MXN</strong></p>
         </div>
 
     </div>
-</section>
 
-<!-- PROMOCIONES -->
-<section id="precios">
-    <h2>Promociones</h2>
-
-    <div class="cards">
-
-        <div class="card promo">
-            <h3>🎁 Paquete Hogar Seguro</h3>
-            <ul>
-                <li>Asegurar tu router</li>
-                <li>Red para invitados</li>
-                <li>Diagnóstico doméstico</li>
-            </ul>
-            <p><strong>$1,200 MXN</strong></p>
-        </div>
-
+    <div class="cards promos-pyme">
         <div class="card promo">
             <h3>🎁 Paquete PyME Segura</h3>
             <ul>
@@ -175,11 +188,19 @@
             </ul>
             <p><strong>$2,800 MXN</strong></p>
         </div>
-
     </div>
+
+    <p class="nota">
+        Los filtros web se implementan mediante DNS de seguridad gratuitos (Cloudflare, Quad9, OpenDNS).
+        No se incluyen licencias de firewall empresarial.
+    </p>
+
+    <p class="nota">
+        Cada configuración depende de las capacidades del router y del acceso proporcionado por el ISP.
+        Si alguna función no está disponible, se aplican alternativas razonables.
+    </p>
 </section>
 
-<!-- BLOG -->
 <section id="blog">
     <h2>Artículos</h2>
 
@@ -206,15 +227,19 @@
     </div>
 </section>
 
-<!-- CONTACTO -->
-<section id="contacto">
-    <h2>Contacto</h2>
+<section id="autor">
+    <h2>Contenido del autor</h2>
 
-    <p>¿Necesitas ayuda para proteger tu red?</p>
+    <p>
+        Más contenido, guías y videos sobre redes pequeñas, ciberseguridad razonable y buenas prácticas
+        para hogares y PYMEs.
+    </p>
 
-    <div class="contact-box">
-        <p>📧 tucorreo@correo.com</p>
-        <p>▶️ youtube.com/@CsProtTTEcSecurity</p>
+    <div class="autor-links">
+        <a href="https://www.youtube.com/@CsProtTTEcSecurity" target="_blank" class="yt-link">
+            <span class="yt-icon">▶️</span>
+            <span>youtube.com/@CsProtTTEcSecurity</span>
+        </a>
     </div>
 </section>
 
@@ -226,6 +251,3 @@
 
 </body>
 </html>
-
-
-

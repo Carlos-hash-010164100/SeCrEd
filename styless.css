@@ -1,4 +1,7 @@
-/* RESET */
+/* ============================================================
+   GLOBAL
+============================================================ */
+
 * {
     margin: 0;
     padding: 0;
@@ -12,7 +15,10 @@ body {
     line-height: 1.6;
 }
 
-/* HEADER */
+/* ============================================================
+   HEADER
+============================================================ */
+
 header {
     background: #0f172a;
     position: sticky;
@@ -54,7 +60,10 @@ nav a:hover {
     color: #1d4ed8;
 }
 
-/* MENÚ MÓVIL HACKER */
+/* ============================================================
+   MENÚ MÓVIL HACKER
+============================================================ */
+
 @media (max-width: 768px) {
     #menu-btn {
         display: block;
@@ -80,7 +89,10 @@ nav a:hover {
     }
 }
 
-/* SECCIONES */
+/* ============================================================
+   SECCIONES
+============================================================ */
+
 section {
     padding: 70px 10%;
 }
@@ -91,7 +103,10 @@ section h2 {
     text-shadow: 0 0 4px #00eaff;
 }
 
-/* HERO */
+/* ============================================================
+   HERO
+============================================================ */
+
 .hero {
     position: relative;
     text-align: center;
@@ -126,7 +141,10 @@ section h2 {
     z-index: 0;
 }
 
-/* BOTONES */
+/* ============================================================
+   BOTONES
+============================================================ */
+
 button {
     padding: 15px 25px;
     background: #2563eb;
@@ -141,10 +159,13 @@ button:hover {
     background: #1d4ed8;
 }
 
-/* TARJETA HACKER FLOTANTE */
+/* ============================================================
+   TARJETA HACKER FLOTANTE
+============================================================ */
+
 .eval-message {
     position: fixed;
-    top: 20%;
+    top: 18%;
     left: 50%;
     transform: translateX(-50%);
     background: rgba(5, 8, 20, 0.95);
@@ -177,7 +198,10 @@ button:hover {
     color: #1d4ed8;
 }
 
-/* TARJETAS */
+/* ============================================================
+   TARJETAS
+============================================================ */
+
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -218,14 +242,20 @@ button:hover {
     text-decoration: underline;
 }
 
-/* PROMOS */
+/* ============================================================
+   PROMOS
+============================================================ */
+
 .promo {
     background: #1e3a8a;
     color: white;
-    padding-bottom: 35px; /* MÁS ESPACIO */
+    padding-bottom: 40px;
 }
 
-/* NOTAS */
+/* ============================================================
+   NOTAS
+============================================================ */
+
 .nota {
     margin-top: 20px;
     font-size: 0.9rem;
@@ -233,7 +263,10 @@ button:hover {
     max-width: 800px;
 }
 
-/* AUTOR */
+/* ============================================================
+   AUTOR
+============================================================ */
+
 .autor-links {
     margin-top: 20px;
 }
@@ -256,13 +289,16 @@ button:hover {
 }
 
 .yt-logo {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     border-radius: 6px;
     box-shadow: 0 0 10px rgba(255, 75, 75, 0.5);
 }
 
-/* FOOTER */
+/* ============================================================
+   FOOTER
+============================================================ */
+
 footer {
     text-align: center;
     padding: 25px;
@@ -270,8 +306,129 @@ footer {
     margin-top: 40px;
 }
 
-/* RESPONSIVE */
+/* ============================================================
+   SOBRE MÍ (solo esta página)
+============================================================ */
+
+.sobre-mi-page {
+    background: linear-gradient(180deg, #0a0f1f 0%, #0c1224 100%);
+    padding: 40px 10%;
+    line-height: 1.8;
+}
+
+.sobre-mi-page section {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.sobre-mi-page .volver {
+    display: inline-block;
+    margin-bottom: 30px;
+    color: #00eaff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.sobre-mi-page .volver:hover {
+    color: #1d4ed8;
+    text-shadow: 0 0 8px #00eaff;
+}
+
+.sobre-mi-page h1,
+.sobre-mi-page h2 {
+    color: #00eaff;
+    text-shadow: 0 0 10px rgba(0, 234, 255, 0.6);
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
+.sobre-mi-page h1 {
+    font-size: 2.2rem;
+}
+
+.sobre-mi-page h2 {
+    font-size: 1.6rem;
+}
+
+.sobre-mi-page p {
+    margin-bottom: 20px;
+}
+
+.sobre-mi-page .sobre-mi-lista {
+    list-style: none;
+    margin-left: 10px;
+    margin-bottom: 25px;
+}
+
+.sobre-mi-page .sobre-mi-lista li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.sobre-mi-page .sobre-mi-lista li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #00eaff;
+}
+
+/* ============================================================
+   ARTÍCULOS (solo páginas de artículos)
+============================================================ */
+
+.articulo-page {
+    background: #0a0f1f;
+    padding: 40px 10%;
+    line-height: 1.8;
+}
+
+.articulo-page section {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.articulo-page .volver {
+    display: inline-block;
+    margin-bottom: 30px;
+    color: #00eaff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.articulo-page .volver:hover {
+    color: #1d4ed8;
+    text-shadow: 0 0 8px #00eaff;
+}
+
+.articulo-page h1,
+.articulo-page h2 {
+    color: #00eaff;
+    text-shadow: 0 0 10px rgba(0, 234, 255, 0.6);
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
+.articulo-page h1 {
+    font-size: 2.2rem;
+}
+
+.articulo-page h2 {
+    font-size: 1.6rem;
+}
+
+.articulo-page p {
+    margin-bottom: 20px;
+}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+
 @media (max-width: 768px) {
+
     section {
         padding: 40px 5%;
     }
@@ -293,92 +450,30 @@ footer {
         width: 90%;
         max-width: 300px;
     }
-}
-/* ======== SOBRE MÍ ======== */
 
-body {
-    background: linear-gradient(180deg, #0a0f1f 0%, #0c1224 100%);
-    color: #e0e0e0;
-    font-family: 'Courier New', monospace;
-    line-height: 1.8;
-    padding: 40px 10%;
-}
-
-section {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-/* Enlace volver al inicio */
-.volver {
-    display: inline-block;
-    margin-bottom: 30px;
-    color: #00eaff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s, text-shadow 0.3s;
-}
-
-.volver:hover {
-    color: #1d4ed8;
-    text-shadow: 0 0 8px #00eaff;
-}
-
-/* Títulos */
-h1, h2 {
-    color: #00eaff;
-    text-shadow: 0 0 10px rgba(0, 234, 255, 0.6);
-    margin-top: 40px;
-    margin-bottom: 15px;
-}
-
-h1 {
-    font-size: 2.2rem;
-}
-
-h2 {
-    font-size: 1.6rem;
-}
-
-/* Párrafos */
-p {
-    margin-bottom: 20px;
-}
-
-/* Lista personalizada */
-.sobre-mi-lista {
-    list-style: none;
-    margin-left: 10px;
-    margin-bottom: 25px;
-}
-
-.sobre-mi-lista li {
-    margin-bottom: 8px;
-    position: relative;
-    padding-left: 20px;
-}
-
-.sobre-mi-lista li::before {
-    content: "▸";
-    position: absolute;
-    left: 0;
-    color: #00eaff;
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-    body {
+    .sobre-mi-page {
         padding: 25px 5%;
         line-height: 1.6;
     }
 
-    h1 {
+    .sobre-mi-page h1 {
         font-size: 1.8rem;
-        text-shadow: 0 0 6px rgba(0, 234, 255, 0.5);
     }
 
-    h2 {
+    .sobre-mi-page h2 {
         font-size: 1.4rem;
-        text-shadow: 0 0 5px rgba(0, 234, 255, 0.4);
+    }
+
+    .articulo-page {
+        padding: 25px 5%;
+        line-height: 1.6;
+    }
+
+    .articulo-page h1 {
+        font-size: 1.8rem;
+    }
+
+    .articulo-page h2 {
+        font-size: 1.4rem;
     }
 }

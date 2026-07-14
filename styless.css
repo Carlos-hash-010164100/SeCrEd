@@ -294,3 +294,91 @@ footer {
         max-width: 300px;
     }
 }
+/* ======== SOBRE MÍ ======== */
+
+body {
+    background: linear-gradient(180deg, #0a0f1f 0%, #0c1224 100%);
+    color: #e0e0e0;
+    font-family: 'Courier New', monospace;
+    line-height: 1.8;
+    padding: 40px 10%;
+}
+
+section {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Enlace volver al inicio */
+.volver {
+    display: inline-block;
+    margin-bottom: 30px;
+    color: #00eaff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.volver:hover {
+    color: #1d4ed8;
+    text-shadow: 0 0 8px #00eaff;
+}
+
+/* Títulos */
+h1, h2 {
+    color: #00eaff;
+    text-shadow: 0 0 10px rgba(0, 234, 255, 0.6);
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 2.2rem;
+}
+
+h2 {
+    font-size: 1.6rem;
+}
+
+/* Párrafos */
+p {
+    margin-bottom: 20px;
+}
+
+/* Lista personalizada */
+.sobre-mi-lista {
+    list-style: none;
+    margin-left: 10px;
+    margin-bottom: 25px;
+}
+
+.sobre-mi-lista li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.sobre-mi-lista li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #00eaff;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    body {
+        padding: 25px 5%;
+        line-height: 1.6;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        text-shadow: 0 0 6px rgba(0, 234, 255, 0.5);
+    }
+
+    h2 {
+        font-size: 1.4rem;
+        text-shadow: 0 0 5px rgba(0, 234, 255, 0.4);
+    }
+}

@@ -470,3 +470,71 @@ footer {
         font-size: 1.4rem;
     }
 }
+/* Caja estilo hacker */
+.riesgos-box {
+    background: rgba(10, 15, 31, 0.9);
+    border: 1px solid #00eaff;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 40px 0;
+    box-shadow: 0 0 12px rgba(0, 234, 255, 0.3);
+}
+
+/* Header con flecha neon */
+.riesgos-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.riesgos-header h2 {
+    color: #00eaff;
+    text-shadow: 0 0 8px rgba(0, 234, 255, 0.6);
+}
+
+.flecha {
+    font-size: 1.6rem;
+    color: #00eaff;
+    transition: transform 0.3s ease;
+    text-shadow: 0 0 6px #00eaff;
+}
+
+.flecha.abierta {
+    transform: rotate(90deg);
+}
+
+/* Contenido oculto */
+.riesgos-content {
+    margin-top: 20px;
+    display: none;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Lista hacker ligera */
+.riesgos-lista {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 15px;
+}
+
+.riesgos-lista li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+    color: #e0e0e0;
+}
+
+.riesgos-lista li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: #00eaff;
+    text-shadow: 0 0 6px #00eaff;
+}
+
+/* Animación */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}

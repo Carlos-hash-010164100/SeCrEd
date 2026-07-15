@@ -1,92 +1,55 @@
-/* ============================
-   MATRIX BACKGROUND
-============================ */
-
-const canvas = document.getElementById('matrix-bg');
-const ctx = canvas.getContext('2d');
-
-function resizeMatrixCanvas() {
-    const hero = document.querySelector('.hero');
-    canvas.width = hero.offsetWidth;
-    canvas.height = hero.offsetHeight;
-}
-resizeMatrixCanvas();
-
-const letters = '01#@$%&*<>[]{}';
-const fontSize = 22;
-let columns = canvas.width / fontSize;
-let drops = Array(Math.floor(columns)).fill(1);
-
-function drawMatrix() {
-    ctx.fillStyle = 'rgba(10, 15, 31, 0.15)';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    ctx.fillStyle = '#c8f6ff';
-    ctx.font = fontSize + 'px monospace';
-
-    drops.forEach((y, i) => {
-        const text = letters[Math.floor(Math.random() * letters.length)];
-        const x = i * fontSize;
-        ctx.fillText(text, x, y * fontSize);
-
-        if (y * fontSize > canvas.height && Math.random() > 0.975) {
-            drops[i] = 0;
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedSegura</title>
+    <style>
+        /* ============================
+           ESTILOS BASE
+        ============================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        drops[i]++;
-    });
-}
 
-setInterval(drawMatrix, 50);
+        body {
+            font-family: 'Courier New', monospace;
+            background: #0a0f1f;
+            color: #c8f6ff;
+        }
 
-window.addEventListener('resize', () => {
-    resizeMatrixCanvas();
-    columns = canvas.width / fontSize;
-    drops = Array(Math.floor(columns)).fill(1);
-});
+        /* ============================
+           HERO + MATRIX
+        ============================ */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
+        #matrix-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
 
-/* ============================
-   MENÚ HACKER
-============================ */
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 20px;
+        }
 
-const menuBtn = document.getElementById('menu-btn');
-const menu = document.getElementById('menu');
-
-menuBtn.addEventListener('click', () => {
-    menu.classList.toggle('active');
-});
-
-document.querySelectorAll('#menu a').forEach(link => {
-    link.addEventListener('click', () => {
-        menu.classList.remove('active');
-    });
-});
-
-
-/* ============================
-   TARJETA FLOTANTE HACKER
-============================ */
-
-const evalBtn = document.getElementById('eval-btn');
-const evalMessage = document.getElementById('eval-message');
-const closeEval = document.getElementById('close-eval');
-
-evalBtn.addEventListener('click', () => {
-    evalMessage.style.display = 'block';
-});
-
-closeEval.addEventListener('click', () => {
-    evalMessage.style.display = 'none';
-});
-function toggleRiesgos() {
-    const box = document.getElementById("riesgos-content");
-    const flecha = document.querySelector(".flecha");
-
-    if (box.style.display === "block") {
-        box.style.display = "none";
-        flecha.classList.remove("abierta");
-    } else {
-        box.style.display = "block";
-        flecha.classList.add("abierta");
-    }
-}
+        .hero h1 {
+            font-size: 2.5rem;
+            text

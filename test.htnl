@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedSegura | Seguridad para Hogares y PYMEs</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 20px; 
+            background: #fff; 
+            color: #000;
+        }
+        header { background: #0f172a; color: #00eaff; padding: 20px; }
+        nav ul { list-style: none; display: flex; gap: 15px; }
+        nav a { color: #00eaff; text-decoration: none; }
+        .card { border: 1px solid #ccc; padding: 15px; margin: 10px 0; }
+        #menu-btn { display: none; }
+        .eval-message { display: none; }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <h2>🛡️ RedSegura</h2>
+        <div id="menu-btn">≡</div>
+        <ul id="menu">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="sobre-mi.html">Sobre mí</a></li>
+            <li><a href="#hogar">Hogar</a></li>
+            <li><a href="#pyme">PyME</a></li>
+            <li><a href="#autor">Contenido del autor</a></li>
+            <li><a href="#blog">Artículos</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="inicio">
+    <h1>Seguridad de Redes para Hogares y PYMEs</h1>
+    <p>Configuración segura de redes, Wi‑Fi, respaldos y buenas prácticas para proteger hogares y pequeños negocios.</p>
+    <button id="eval-btn">Solicitar Evaluación</button>
+</section>
+
+<section id="hogar">
+    <h2>Servicios para Hogares</h2>
+    <div class="card">
+        <h3>🏠 Asegurar tu Router</h3>
+        <p>Protección básica para tu hogar.</p>
+        <p><strong>$350 MXN</strong></p>
+    </div>
+    <div class="card">
+        <h3>🌐 Red para Invitados</h3>
+        <p>Aislamiento total para visitas.</p>
+        <p><strong>$250 MXN</strong></p>
+    </div>
+</section>
+
+<section id="pyme">
+    <h2>Servicios para PYMEs</h2>
+    <div class="card">
+        <h3>🏢 Auditoría Básica de Red</h3>
+        <p>Diagnóstico para pequeñas empresas.</p>
+        <p><strong>$1,000 MXN</strong></p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 RedSegura</p>
+</footer>
+
+</body>
+</html>

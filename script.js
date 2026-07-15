@@ -78,3 +78,15 @@ evalBtn.addEventListener('click', () => {
 closeEval.addEventListener('click', () => {
     evalMessage.style.display = 'none';
 });
+function toggleRiesgos() {
+    const box = document.getElementById("riesgos-content");
+    const flecha = document.querySelector(".flecha");
+
+    if (box.style.display === "block") {
+        box.style.display = "none";
+        flecha.classList.remove("abierta");
+    } else {
+        box.style.display = "block";
+        flecha.classList.add("abierta");
+    }
+}

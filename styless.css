@@ -13,7 +13,7 @@ body {
     background: #0a0f1f;
     color: #e0e0e0;
     line-height: 1.6;
-    overflow-x: hidden; /* evita recortes laterales */
+    overflow-x: hidden;
 }
 
 /* ============================================================
@@ -105,13 +105,13 @@ section h2 {
 }
 
 /* ============================================================
-   HERO (FIX DEFINITIVO PARA ANCHO COMPLETO)
+   HERO
 ============================================================ */
 
 .hero {
     position: relative;
     text-align: center;
-    padding: 0; /* sin márgenes laterales */
+    padding: 0;
     overflow: hidden;
     min-height: 500px;
 }
@@ -119,7 +119,7 @@ section h2 {
 .hero-content {
     position: relative;
     z-index: 1;
-    padding: 120px 10%; /* solo el contenido tiene margen */
+    padding: 120px 10%;
 }
 
 .hero h1 {
@@ -137,7 +137,7 @@ section h2 {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw; /* ocupa todo el ancho del viewport */
+    width: 100vw;
     height: 100%;
     z-index: 0;
 }
@@ -180,6 +180,11 @@ button:hover {
     z-index: 9999;
     display: none;
     animation: popup 0.3s ease-out;
+}
+
+/* Clase necesaria para que el cuadro se muestre */
+.eval-message.show {
+    display: block;
 }
 
 @keyframes popup {
@@ -242,7 +247,6 @@ button:hover {
     color: #1d4ed8;
     text-decoration: underline;
 }
-
 /* ============================================================
    PROMOS
 ============================================================ */
@@ -306,6 +310,7 @@ footer {
     background: #0f172a;
     margin-top: 40px;
 }
+
 /* ============================================================
    SOBRE MÍ (solo esta página)
 ============================================================ */
@@ -470,7 +475,11 @@ footer {
         font-size: 1.4rem;
     }
 }
-/* Caja estilo hacker */
+
+/* ============================================================
+   RIESGOS BOX
+============================================================ */
+
 .riesgos-box {
     background: rgba(10, 15, 31, 0.9);
     border: 1px solid #00eaff;
@@ -480,7 +489,6 @@ footer {
     box-shadow: 0 0 12px rgba(0, 234, 255, 0.3);
 }
 
-/* Header con flecha neon */
 .riesgos-header {
     display: flex;
     justify-content: space-between;
@@ -504,14 +512,12 @@ footer {
     transform: rotate(90deg);
 }
 
-/* Contenido oculto */
 .riesgos-content {
     margin-top: 20px;
     display: none;
     animation: fadeIn 0.3s ease-in-out;
 }
 
-/* Lista hacker ligera */
 .riesgos-lista {
     list-style: none;
     padding-left: 0;
@@ -533,7 +539,6 @@ footer {
     text-shadow: 0 0 6px #00eaff;
 }
 
-/* Animación */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-5px); }
     to { opacity: 1; transform: translateY(0); }

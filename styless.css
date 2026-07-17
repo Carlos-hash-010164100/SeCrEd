@@ -543,17 +543,3 @@ footer {
     from { opacity: 0; transform: translateY(-5px); }
     to { opacity: 1; transform: translateY(0); }
 }
-
-/* ============================================================
-   HOTFIX: Matrix no tapa el contenido
-============================================================ */
-#matrix-bg {
-    opacity: 0.25; /* que se vea el texto debajo */
-    pointer-events: none; /* clics pasan al contenido */
-}
-
-.hero-content {
-    background: rgba(10, 15, 31, 0.7); /* fondo para que el texto resalte */
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(0, 234, 255, 0.15);
-}

@@ -23,12 +23,14 @@ function initMatrix() {
 
 function drawMatrix() {
     slowDown++;
-    if (slowDown % 3 !== 0) return; // AJUSTA VELOCIDAD (3 = perfecto)
+    if (slowDown % 2 !== 0) return; // velocidad más fluida
 
-    ctx.fillStyle = 'rgba(10, 15, 31, 0.1)';
+    // Fondo con más opacidad para que el rastro sea visible
+    ctx.fillStyle = 'rgba(10, 15, 31, 0.25)';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    ctx.fillStyle = '#00d9ff';
+    // Color más brillante (azul neón hacker)
+    ctx.fillStyle = '#00eaff';
     ctx.font = fontSize + 'px monospace';
 
     for (let i = 0; i < drops.length; i++) {

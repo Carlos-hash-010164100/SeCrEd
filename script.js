@@ -1,34 +1,37 @@
 /* ============================
-   MATRIX BACKGROUND OPTIMIZADO
+   MATRIX BACKGROUND
 ============================ */
 const canvas = document.getElementById('matrix-bg');
 const ctx = canvas.getContext('2d');
 const hero = document.querySelector('.hero');
 
+// Ajusta tamaño de fuente según pantalla
 let fontSize = window.innerWidth < 768 ? 16 : 22;
 let columns, drops;
 let animationFrameId;
+
+// Control de velocidad del Matrix
 let slowDown = 0;
 
 function initMatrix() {
     canvas.width = window.innerWidth;
     canvas.height = hero.offsetHeight || window.innerHeight;
 
-    // Menos columnas = más rendimiento en móviles
-    columns = Math.floor(canvas.width / (fontSize * 1.4));
+    // ANCHO COMPLETO — como antes
+    columns = Math.floor(canvas.width / fontSize);
     drops = Array(columns).fill(1);
 }
 
 function drawMatrix() {
     slowDown++;
-    if (slowDown % 1 !== 0) return; // más denso
+    if (slowDown % 2 !== 0) return; // velocidad fluida sin perder densidad
 
-    // Fondo más opaco para que el rastro se vea incluso con FPS bajo
-    ctx.fillStyle = 'rgba(10, 15, 31, 0.35)';
+    // Fondo con opacidad equilibrada (no apagado)
+    ctx.fillStyle = 'rgba(10, 15, 31, 0.25)';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    // Azul más brillante
-    ctx.fillStyle = '#00faff';
+    // Color brillante (azul hacker)
+    ctx.fillStyle = '#00eaff';
     ctx.font = fontSize + 'px monospace';
 
     for (let i = 0; i < drops.length; i++) {
@@ -93,6 +96,7 @@ closeEval.addEventListener('click', () => {
     evalMessage.classList.remove('show');
 });
 
+// Cierra si das clic afuera
 document.addEventListener('click', (e) => {
     if (
         evalMessage.classList.contains('show') &&
